@@ -7,17 +7,21 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 
+const FRONTEND_URL = process.env.FRONTEND_URL;
 // CONFIGURAR SOCKET.IO
 const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
-    origin: "*", // habilitá el origen que necesites en producción
+    origin: FRONTEND_URL, // habilitá el origen que necesites en producción
     methods: ["GET", "POST", "PUT", "DELETE"],
   },
 });
 
 //MiddleWare para cors
-app.use(cors());
+app.use(cors({
+  origin: FRONTEND_URL,
+  credentials: true,
+}));
 
 const PORT = process.env.PORT || 3000;
 

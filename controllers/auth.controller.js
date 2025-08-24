@@ -1,4 +1,3 @@
-const db = require("../models/index");
 const bcrypt = require("bcrypt");
 const {  verifyUser, generateAccessToken, registerUser } = require("./auth.service");
 const jwt = require('jsonwebtoken');
