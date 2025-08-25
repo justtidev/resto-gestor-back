@@ -43,7 +43,10 @@ pagadaEn: {
     
     
     },{ timestamps: true 
-        });
+        },
+      {
+  tableName: 'comandas' // aquí pones el nombre exacto de la tabla
+});
 
     return Comanda;
 }

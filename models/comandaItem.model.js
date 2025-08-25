@@ -24,6 +24,9 @@ module.exports = (sequelize, Sequelize) => {
     
     
     },
+    {
+  tableName: 'comandaitems' // aquí pones el nombre exacto de la tabla
+}
 );
 
     return ComandaItem;

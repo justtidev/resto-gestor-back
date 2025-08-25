@@ -47,7 +47,10 @@ module.exports = (sequelize, Sequelize) => {
 }
   }, {
     timestamps: true // agrega createdAt y updatedAt automáticamente
-  });
+  },
+{
+  tableName: 'cierrecajas' // aquí pones el nombre exacto de la tabla
+});
 
   return CierreCaja;
 };

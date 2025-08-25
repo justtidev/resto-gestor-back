@@ -10,7 +10,10 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true,
         },
 
-    });
+    },
+{
+  tableName: 'rols' // aquí pones el nombre exacto de la tabla
+});
 
     return Rol;
 }

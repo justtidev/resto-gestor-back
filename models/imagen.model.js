@@ -15,7 +15,10 @@ module.exports = (sequelize, Sequelize) => {
        
 
 
-    });
+    },
+{
+  tableName: 'imagens' // aquí pones el nombre exacto de la tabla
+});
 
     return Imagen;
 }
