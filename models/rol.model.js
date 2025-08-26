@@ -12,7 +12,9 @@ module.exports = (sequelize, Sequelize) => {
 
     },
 {
-  tableName: 'rols' // aquí pones el nombre exacto de la tabla
+  tableName: 'rols', // aquí pones el nombre exacto de la tabla
+   freezeTableName: true,
+  
 });
 
     return Rol;

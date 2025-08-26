@@ -25,7 +25,9 @@ module.exports = (sequelize, Sequelize) => {
     
     },
     {
-  tableName: 'comandaitems' // aquí pones el nombre exacto de la tabla
+  tableName: 'comandaitems', // aquí pones el nombre exacto de la tabla
+   freezeTableName: true,
+  timestamps: true,
 }
 );
 

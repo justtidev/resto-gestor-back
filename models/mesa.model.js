@@ -31,10 +31,11 @@ qrBase64: {
 
     
     
-    },{ timestamps: true 
-        },
+    },
       {
-  tableName: 'mesas' // aquí pones el nombre exacto de la tabla
+  tableName: 'mesas', // aquí pones el nombre exacto de la tabla
+  freezeTableName: true,
+  timestamps: true,
 });
 
     return Mesa;

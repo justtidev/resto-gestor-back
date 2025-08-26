@@ -42,10 +42,11 @@ pagadaEn: {
       
     
     
-    },{ timestamps: true 
-        },
+    },
       {
-  tableName: 'comandas' // aquí pones el nombre exacto de la tabla
+  tableName: 'comandas', // aquí pones el nombre exacto de la tabla
+   freezeTableName: true,
+  timestamps: true,
 });
 
     return Comanda;

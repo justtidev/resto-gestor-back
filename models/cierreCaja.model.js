@@ -45,11 +45,11 @@ module.exports = (sequelize, Sequelize) => {
   type: DataTypes.JSON,
   allowNull: true,
 }
-  }, {
-    timestamps: true // agrega createdAt y updatedAt automáticamente
-  },
+  }, 
 {
-  tableName: 'cierrecajas' // aquí pones el nombre exacto de la tabla
+  tableName: 'cierrecajas', // aquí pones el nombre exacto de la tabla
+   freezeTableName: true,
+  timestamps: true,
 });
 
   return CierreCaja;
