@@ -15,6 +15,16 @@ const sequelize = new Sequelize(
     host: config.db.host,
     dialect: config.db.dialect,
     port: config.db.port,
+    logging: false, // opcional, para no saturar logs
+    retry: {
+      max: 3 // reintenta 3 veces si falla la conexión
+  },
+   pool: {
+      max: 10,      // máximo de conexiones simultáneas
+      min: 0,
+      acquire: 30000, // 30s para obtener una conexión
+      idle: 10000     // 10s de inactividad
+    }
   }
 );
 
