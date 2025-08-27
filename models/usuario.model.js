@@ -37,7 +37,7 @@ module.exports = (sequelize, Sequelize) => {
     },
    {
     tableName: 'usuarios', // <-- coincide con la tabla real en Railway
-    timestamps: false       // evita errores si no tenés createdAt/updatedAt
+    timestamps: true       
   }
         );
 
