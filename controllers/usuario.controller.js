@@ -82,9 +82,10 @@ async function actualizarUsuario(req, res) {
 
     try {
       let hash = undefined;
-        if (usuario.clave) {
-            hash = await bcrypt.hash(usuario.clave, 10);
+        if (usuario.contraseña) {
+            hash = await bcrypt.hash(usuario.contraseña, 10);
         }
+        console.log("actualiza hash", hash)
         const actualizaUsuario = await db.usuario.update(
             {
                 usuario: usuario.usuario,
