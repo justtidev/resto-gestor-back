@@ -1,5 +1,5 @@
 const db = require("../models/index");
-//const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 async function crearUsuario(req, res) {
     const usuario = req.body;
@@ -81,15 +81,19 @@ async function actualizarUsuario(req, res) {
     const usuario = req.body;
 
     try {
+      let hash = undefined;
+        if (usuario.clave) {
+            hash = await bcrypt.hash(usuario.clave, 10);
+        }
         const actualizaUsuario = await db.usuario.update(
             {
                 usuario: usuario.usuario,
                 nombre: usuario.nombre,
                 apellido: usuario.apellido,
-                contraseña: usuario.clave,
+                
                 email: usuario.email,
                 RolId: usuario.RolId,
-                
+                ...(hash && { contraseña: hash })
             },
             {
                 where: { id: id },
