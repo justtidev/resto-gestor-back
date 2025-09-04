@@ -16,8 +16,10 @@ if (!usuarioEncontrado) {
     throw new Error("El usuario no existe");
   }
   console.log("user encontrado", usuarioEncontrado);
- 
+ console.log('Contraseña recibida del front:', `"${contraseña}"`);
+
   // Comparar la clave en texto plano con la clave encriptada
+  console.log(typeof contraseña, contraseña);
   const contraseñaValida = await bcrypt.compare
   (contraseña, usuarioEncontrado.contraseña);
   //metodo compare retonra un booleano, true si la clave es correcta, false si no lo es
