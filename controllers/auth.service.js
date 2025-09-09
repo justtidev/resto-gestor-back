@@ -36,7 +36,7 @@ function generateAccessToken(data) {
   //el metodo sign de jwt recibe un objeto con los datos que queremos incluir en el token, una clave secreta y un objeto de opciones
   // El token expirará en 15 minutos
   console.log("data generateAccessToken", data)
-  return jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1m" });
+  return jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "30m" });
 }
 
 // Genera un token de acceso
